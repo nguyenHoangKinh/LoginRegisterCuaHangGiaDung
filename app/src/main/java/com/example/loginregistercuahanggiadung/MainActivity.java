@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String usernameUser = intent.getStringExtra("username");
+        String usernameUser = intent.getStringExtra("userName");
         String nameUser = intent.getStringExtra("name");
         String emailUser = intent.getStringExtra("email");
         String phonelUser = intent.getStringExtra("phone");
@@ -65,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
         String userUsername = showUsername.getText().toString().trim();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
+        Query checkUserDatabase = reference.orderByChild("userName").equalTo(userUsername);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
 
-                    String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                    String usernameFromDB = snapshot.child(userUsername).child("userName").getValue(String.class);
                     String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
                     String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                     String phonelFromDB = snapshot.child(userUsername).child("phone").getValue(String.class);
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(MainActivity.this, EditUser.class);
 
-                    intent.putExtra("username", usernameFromDB);
+                    intent.putExtra("userName", usernameFromDB);
                     intent.putExtra("name", nameFromDB);
                     intent.putExtra("email", emailFromDB);
                     intent.putExtra("phone", phonelFromDB);

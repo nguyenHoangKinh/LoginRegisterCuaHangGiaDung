@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/titleName"
-        android:layout_width="64dp"
-        android:layout_height="33dp"
+        android:layout_width="350dp"
+        android:layout_height="29dp"
         android:layout_marginTop="10dp"
         android:text="Name"
         android:textColor="@color/white"

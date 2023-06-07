@@ -35,7 +35,7 @@ public class EditUser extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isNameChanged() || isEmailChanged() || isPasswordChanged()) {
+                if ( isUserNameChanged() || isNameChanged() || isEmailChanged() || isPhonelChanged() || isPasswordChanged()) {
                     Toast.makeText(EditUser.this, "Saved", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(EditUser.this, "No Changes Found", Toast.LENGTH_SHORT).show();
@@ -43,7 +43,16 @@ public class EditUser extends AppCompatActivity {
             }
         });
     }
-
+    //ham hay doi ten nguoi dung
+    public boolean isUserNameChanged(){
+        if (!nameUser.equals(editName.getText().toString())){
+            reference.child(usernameUser).child("userName").setValue(editUsername.getText().toString());
+            usernameUser = editUsername.getText().toString();
+            return true;
+        } else{
+            return false;
+        }
+    }    //ham hay doi ten nguoi dung
     public boolean isNameChanged(){
         if (!nameUser.equals(editName.getText().toString())){
             reference.child(usernameUser).child("name").setValue(editName.getText().toString());
@@ -53,7 +62,7 @@ public class EditUser extends AppCompatActivity {
             return false;
         }
     }
-
+    //ham hay doi email nguoi dung
     public boolean isEmailChanged(){
         if (!emailUser.equals(editName.getText().toString())){
             reference.child(usernameUser).child("email").setValue(editEmail.getText().toString());
@@ -63,6 +72,7 @@ public class EditUser extends AppCompatActivity {
             return false;
         }
     }
+    //ham hay doi so dien thoai nguoi dung
     public boolean isPhonelChanged(){
         if (!emailUser.equals(editName.getText().toString())){
             reference.child(usernameUser).child("phone").setValue(editPhone.getText().toString());
@@ -72,7 +82,7 @@ public class EditUser extends AppCompatActivity {
             return false;
         }
     }
-
+    //ham hay doi mat khau nguoi dung
     public boolean isPasswordChanged(){
         if (!passwordUser.equals(editPassword.getText().toString())){
             reference.child(usernameUser).child("password").setValue(editPassword.getText().toString());
@@ -86,7 +96,7 @@ public class EditUser extends AppCompatActivity {
     public void showData(){
         Intent intent = getIntent();
 
-        usernameUser = intent.getStringExtra("username");
+        usernameUser = intent.getStringExtra("userName");
         nameUser = intent.getStringExtra("name");
         emailUser = intent.getStringExtra("email");
         userPhone = intent.getStringExtra("phone");
