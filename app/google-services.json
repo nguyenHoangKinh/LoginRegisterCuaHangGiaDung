@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "342056454452",
+    "firebase_url": "https://loginregistercuahanggiadung-default-rtdb.firebaseio.com",
+    "project_id": "loginregistercuahanggiadung",
+    "storage_bucket": "loginregistercuahanggiadung.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342056454452:android:c7df8e38b75b24c938fd61",
+        "android_client_info": {
+          "package_name": "com.example.loginregistercuahanggiadung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342056454452-mhd1b39lhqckgr0g61huvb5f83d1mahc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn-KDBOGc9Gdtoxy81u8gElEU21I_JB7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342056454452-mhd1b39lhqckgr0g61huvb5f83d1mahc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
