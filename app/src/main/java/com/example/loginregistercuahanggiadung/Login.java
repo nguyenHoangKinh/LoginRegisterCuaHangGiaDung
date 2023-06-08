@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        //su ly su kien chuyen mang hinh dang ky
+        //su ly su kien chuyen mang hinh qua mang hinh dang ky
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
     public Boolean validateUsername() {
         String val = loginUsername.getText().toString();
         if (val.isEmpty()) {
-            loginUsername.setError("Username cannot be empty");
+            loginUsername.setError("UserName Invalid");
             return false;
         } else {
             loginUsername.setError(null);
