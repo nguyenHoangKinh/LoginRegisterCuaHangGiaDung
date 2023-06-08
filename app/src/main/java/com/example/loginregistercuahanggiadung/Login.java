@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        
         //goi doi tuong theo id 
         loginUsername = findViewById(R.id.login_username);
         loginPassword = findViewById(R.id.login_password);
